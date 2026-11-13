@@ -182,3 +182,4 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
     </>
   );
 }
+

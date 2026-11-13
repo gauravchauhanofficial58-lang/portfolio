@@ -105,3 +105,4 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
     </>
   );
 }
+

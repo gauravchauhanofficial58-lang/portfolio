@@ -264,3 +264,4 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
     </section>
   );
 }
+

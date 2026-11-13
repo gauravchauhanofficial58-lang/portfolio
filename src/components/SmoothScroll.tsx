@@ -42,3 +42,4 @@ export default function SmoothScroll({ children, enabled = true }: SmoothScrollP
 
   return <>{children}</>;
 }
+
