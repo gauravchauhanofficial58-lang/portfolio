@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Compass, Sparkles, Terminal, Code2 } from "lucide-react";
+import { Compass, Sparkles, Terminal, Code2, Cpu, Globe, UserCheck } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
 export default function About() {
@@ -11,7 +10,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full py-28 md:py-36 px-4 md:px-8 border-t border-white/8 bg-[#070707]"
+      className="relative w-full py-24 sm:py-32 md:py-36 px-4 sm:px-6 md:px-12 border-t border-white/8 bg-[#070707]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header / Monospace Meta Tag */}
@@ -21,50 +20,69 @@ export default function About() {
         </div>
 
         {/* Editorial Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column (5 cols): Large Heading & Portrait Card */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Left Column (5 cols): Large Heading & Architectural Identity Console */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
             <div>
-              <h2 className="font-editorial-serif text-4xl sm:text-5xl md:text-6xl text-[#F2EEE8] font-normal tracking-[-0.02em] leading-[1.08]">
+              <h2 className="font-editorial-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#F2EEE8] font-normal tracking-[-0.02em] leading-[1.08]">
                 {personal.aboutHeadline}
               </h2>
 
-              <div className="mt-6 inline-block px-3.5 py-1.5 rounded-full bg-[#FF8752]/10 border border-[#FF8752]/20">
+              <div className="mt-4 inline-block px-3.5 py-1.5 rounded-full bg-[#FF8752]/10 border border-[#FF8752]/20">
                 <span className="text-xs font-editorial-mono text-[#FF8752] tracking-wider uppercase">
                   {personal.aboutStatement}
                 </span>
               </div>
             </div>
 
-            {/* Cinematic Portrait Card Detail */}
-            <div className="relative group rounded-2xl overflow-hidden border border-white/10 bg-[#111111] p-2 transition-all duration-500 hover:border-[#FF8752]/40">
-              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#0A0A0A]">
-                <Image
-                  src="/images/portrait_cinematic.webp"
-                  alt="Gaurav Portrait Vignette"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover object-top filter grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
-
-                {/* Overlay Metadata */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-editorial-mono text-[#F2EEE8]/80">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#FF8752] animate-pulse" />
-                    <span>GAURAV &middot; INDIA</span>
-                  </div>
-                  <span className="text-[#A6A19A]">ASPIRING AI/ML</span>
+            {/* Architectural Identity & Ethos Console (Replaces duplicate portrait with crisp technical identity) */}
+            <div className="rounded-2xl border border-white/10 bg-[#0E0E0E] p-6 space-y-5 transition-all duration-300 hover:border-[#FF8752]/30">
+              <div className="flex items-center justify-between border-b border-white/8 pb-4">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF8752] animate-pulse" />
+                  <span className="font-editorial-mono text-xs uppercase tracking-wider text-[#F2EEE8]">
+                    GAURAV &middot; BUILDER PROFILE
+                  </span>
                 </div>
+                <span className="text-[10px] font-editorial-mono text-[#77736D]">
+                  SYS: ONLINE
+                </span>
+              </div>
+
+              <div className="space-y-3 font-editorial-mono text-xs">
+                <div className="flex justify-between items-center py-1 border-b border-white/5">
+                  <span className="text-[#77736D]">CURRENT STAGE</span>
+                  <span className="text-[#F2EEE8] font-medium">Class 8 &middot; CBSE</span>
+                </div>
+                <div className="flex justify-between items-center py-1 border-b border-white/5">
+                  <span className="text-[#77736D]">INSTITUTION</span>
+                  <span className="text-[#D4CFCA]">Awan Educational Academy</span>
+                </div>
+                <div className="flex justify-between items-center py-1 border-b border-white/5">
+                  <span className="text-[#77736D]">FUTURE VISION</span>
+                  <span className="text-[#FF8752]">IIT Bombay &middot; CSE & AI/ML</span>
+                </div>
+                <div className="flex justify-between items-center py-1 border-b border-white/5">
+                  <span className="text-[#77736D]">CORE LANGUAGE</span>
+                  <span className="text-[#F2EEE8]">Python &middot; TypeScript</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-[#77736D]">LOCATION</span>
+                  <span className="text-[#A6A19A]">India &middot; Global Horizon</span>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-white/5 border border-white/6 text-xs text-[#A6A19A] leading-relaxed">
+                &ldquo;Engineering software is not merely a technical pursuit — it is the medium through which we sculpt the tools of the next era.&rdquo;
               </div>
             </div>
           </div>
 
           {/* Right Column (7 cols): Editorial Prose & Core Tenets */}
-          <div className="lg:col-span-7 flex flex-col gap-10">
+          <div className="lg:col-span-7 flex flex-col gap-8">
             {/* The Main Bio Paragraphs */}
-            <div className="space-y-6 text-lg sm:text-xl font-editorial-serif text-[#A6A19A] leading-relaxed">
-              <p className="text-[#F2EEE8] text-xl sm:text-2xl font-light">
+            <div className="space-y-5 text-base sm:text-lg md:text-xl font-editorial-serif text-[#A6A19A] leading-relaxed">
+              <p className="text-[#F2EEE8] text-lg sm:text-xl md:text-2xl font-light">
                 &ldquo;{personal.aboutParagraphs[0]}&rdquo;
               </p>
               <p>
@@ -76,8 +94,8 @@ export default function About() {
             </div>
 
             {/* Core Tenets Cards */}
-            <div className="pt-8 border-t border-white/8">
-              <h3 className="text-xs font-editorial-mono uppercase tracking-[0.2em] text-[#77736D] mb-6">
+            <div className="pt-6 border-t border-white/8">
+              <h3 className="text-xs font-editorial-mono uppercase tracking-[0.2em] text-[#77736D] mb-5">
                 Guiding Principles
               </h3>
 
@@ -108,7 +126,7 @@ export default function About() {
             </div>
 
             {/* Quick Stats / Identity Badges */}
-            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-editorial-mono text-[#A6A19A]">
+            <div className="flex flex-wrap items-center gap-2.5 pt-2 text-xs font-editorial-mono text-[#A6A19A]">
               <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/8">
                 CBSE STUDENT
               </span>
@@ -128,4 +146,3 @@ export default function About() {
     </section>
   );
 }
-

@@ -1,26 +1,13 @@
-@import "tailwindcss";
-
-@theme {
-  --color-brand-bg: #050505;
-  --color-brand-bg-subtle: #0B0B0B;
-  --color-brand-card: #111111;
-  --color-brand-card-hover: #161616;
-  --color-brand-text: #F2EEE8;
-  --color-brand-text-secondary: #A6A19A;
-  --color-brand-text-muted: #77736D;
-  --color-brand-accent: #FF8752;
-  --color-brand-accent-glow: rgba(255, 135, 82, 0.25);
-  --color-brand-border: rgba(255, 255, 255, 0.12);
-  --color-brand-border-subtle: rgba(255, 255, 255, 0.06);
-
-  --font-serif: "Cormorant Garamond", Garamond, Georgia, serif;
-  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #050505;
   --foreground: #F2EEE8;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
 }
 
 /* Custom Editorial Scrollbar */
@@ -81,50 +68,12 @@ body {
   box-shadow: 0 0 60px -10px rgba(255, 135, 82, 0.25);
 }
 
-.glow-text-orange {
-  text-shadow: 0 0 25px rgba(255, 135, 82, 0.45);
-}
-
-/* Animations */
-@keyframes pulseSubtle {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(0.92);
-  }
-}
-
-.animate-pulse-subtle {
-  animation: pulseSubtle 2.8s ease-in-out infinite;
-}
-
-@keyframes floatGentle {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.animate-float-gentle {
-  animation: floatGentle 6s ease-in-out infinite;
-}
-
 /* Glass panel */
 .glass-panel {
   background: rgba(17, 17, 17, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glass-panel-hover:hover {
-  background: rgba(22, 22, 22, 0.85);
-  border-color: rgba(255, 135, 82, 0.3);
 }
 
 /* Accessibility reduced motion */
