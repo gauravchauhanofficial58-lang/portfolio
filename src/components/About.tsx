@@ -45,7 +45,7 @@ export default function About() {
                   </span>
                 </div>
                 <span className="text-[10px] font-editorial-mono text-[#77736D]">
-                  SYS: ONLINE
+                  INDEPENDENT BUILDER
                 </span>
               </div>
 

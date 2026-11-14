@@ -77,45 +77,45 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "neurocraft-studio",
-      title: "NeuroCraft Studio",
-      category: "AI Interface & Creative Suite",
-      tagline: "Generative canvas exploring prompt-driven node workflows",
-      description: "An experimental visual studio investigating real-time node graphs, contextual AI prompts, and fluid WebGL canvas interactions for modern digital creators.",
-      technologies: ["Next.js", "TypeScript", "Three.js", "Tailwind CSS", "Canvas API"],
+      id: "agent-sandbox",
+      title: "Project Alpha — Autonomous Agent Sandbox",
+      category: "AI & Autonomous Systems",
+      tagline: "Experimental multi-agent coordination architecture",
+      description: "An exploratory sandbox researching LLM tool-calling patterns, task decomposition, and local multi-agent workflows built with Python and Next.js.",
+      technologies: ["Python", "FastAPI", "Next.js", "TypeScript"],
       year: "2026",
-      status: "Active Exploration",
-      githubUrl: "#",
-      liveUrl: "#",
-      highlight: "Dynamic Spatial Node Graph",
+      status: "In Development",
+      githubUrl: "https://github.com/gauravchauhanofficial58-lang/portfolio",
+      liveUrl: "https://portfolio-gilt-beta-41.vercel.app",
+      highlight: "Autonomous Agent Sandbox",
       accent: "#FF8752"
     },
     {
-      id: "synthetix-engine",
-      title: "Synthetix Engine",
-      category: "Intelligent Automation",
-      tagline: "Event-driven micro-pipeline for local intelligence",
-      description: "A lightweight automation platform architected to orchestrate local machine learning models, structured JSON outputs, and asynchronous background queues with high responsiveness.",
-      technologies: ["Python", "FastAPI", "React", "Docker", "Vector DB"],
-      year: "2025",
+      id: "spatial-3d",
+      title: "Project Beta — Spatial 3D Interface",
+      category: "Interactive WebGL",
+      tagline: "Kinetic canvas combining Three.js shaders & editorial layout",
+      description: "An interactive exploration into modern WebGL particle dynamics, camera parallax physics, and responsive editorial typography for immersive web experiences.",
+      technologies: ["Three.js", "React", "Next.js", "Tailwind CSS"],
+      year: "2026",
       status: "Prototype",
-      githubUrl: "#",
-      liveUrl: "#",
-      highlight: "Sub-50ms Event Pipeline",
+      githubUrl: "https://github.com/gauravchauhanofficial58-lang/portfolio",
+      liveUrl: "https://portfolio-gilt-beta-41.vercel.app",
+      highlight: "WebGL Celestial Engine",
       accent: "#E27242"
     },
     {
-      id: "aether-ui",
-      title: "Aether UI",
-      category: "Kinetic Design System",
-      tagline: "High-contrast editorial component architecture",
-      description: "An ultra-refined, dark-mode component library engineered for cinematic portfolios and editorial publications, featuring natural physics-based spring transitions.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "CSS Variables"],
-      year: "2025",
-      status: "Open Architecture",
-      githubUrl: "#",
-      liveUrl: "#",
-      highlight: "Spatial Motion Engine",
+      id: "automation-engine",
+      title: "Project Gamma — Intelligent Automation Engine",
+      category: "Productivity & Tooling",
+      tagline: "Event-driven workflows & developer automation patterns",
+      description: "A conceptual blueprint for asynchronous background workers, structured schema validation, and developer command-line automations to streamline digital creation.",
+      technologies: ["Python", "Node.js", "REST APIs", "Modern Shell"],
+      year: "2026",
+      status: "Active Exploration",
+      githubUrl: "https://github.com/gauravchauhanofficial58-lang/portfolio",
+      liveUrl: "https://portfolio-gilt-beta-41.vercel.app",
+      highlight: "Workflow Automation Blueprint",
       accent: "#FFA375"
     }
   ] as ProjectItem[],
@@ -126,19 +126,19 @@ export const PORTFOLIO_DATA = {
       description: "Exploring mathematical concepts, neural models, and prompt architectures.",
       skills: [
         { name: "Artificial Intelligence & AI/ML", level: "Active Exploration", context: "Neural net fundamentals & model inference", highlight: true },
-        { name: "Python Programming", level: "Core Exploration", context: "Data manipulation, scripts & algorithmic logic", highlight: true },
-        { name: "Prompt Engineering", level: "Applied Practice", context: "Structured outputs, few-shot conditioning & agentic flows" }
+        { name: "Python Programming", level: "Hands-on Practice", context: "Data manipulation, scripts & algorithmic logic", highlight: true },
+        { name: "Prompt Engineering", level: "Practical Application", context: "Structured outputs, few-shot conditioning & agentic flows" }
       ]
     },
     {
       category: "Web & Frontend Architecture",
       description: "Building responsive, editorial, and interactive user interfaces.",
       skills: [
-        { name: "React", level: "Proficient", context: "Component lifecycles, state architecture & hooks", highlight: true },
-        { name: "Next.js", level: "Proficient", context: "App Router, SSR, SEO & optimized routing", highlight: true },
-        { name: "JavaScript", level: "Solid Foundation", context: "Async programming, ESNext features & DOM" },
-        { name: "HTML5", level: "Semantic Standards", context: "Accessibility, modern document hierarchy" },
-        { name: "CSS3 / Tailwind", level: "Styling & Layout", context: "Flexbox, CSS Grid, custom tokens & typography" }
+        { name: "React", level: "Active Practice", context: "Component lifecycles, state architecture & hooks", highlight: true },
+        { name: "Next.js", level: "Core Architecture", context: "App Router, SSR, SEO & optimized routing", highlight: true },
+        { name: "JavaScript", level: "Hands-on Practice", context: "Async programming, ESNext features & DOM" },
+        { name: "HTML5", level: "Modern Standards", context: "Semantic accessibility, modern document hierarchy" },
+        { name: "CSS3 / Tailwind", level: "Responsive Systems", context: "Flexbox, CSS Grid, custom tokens & typography" }
       ]
     },
     {
@@ -146,8 +146,8 @@ export const PORTFOLIO_DATA = {
       description: "Merging visual elegance with engineering precision.",
       skills: [
         { name: "UI/UX Design", level: "Creative Focus", context: "Minimalist layouts, typography & design systems", highlight: true },
-        { name: "SaaS Development", level: "Architecture", context: "Full-stack patterns, auth flows & product thinking" },
-        { name: "Video Editing", level: "Creative Output", context: "Pacing, cinematic storytelling & motion graphics" },
+        { name: "SaaS Development", level: "Product Thinking", context: "Full-stack patterns, auth flows & user experience" },
+        { name: "Video Editing", level: "Motion & Flow", context: "Pacing, cinematic storytelling & motion graphics" },
         { name: "Git & GitHub", level: "Version Control", context: "Branch workflows, repository maintenance & CI" }
       ]
     }
@@ -259,11 +259,9 @@ export const PORTFOLIO_DATA = {
     heading: "HAVE AN INTERESTING IDEA?",
     subheading: "Let's explore possibilities and create something meaningful.",
     socials: [
-      { label: "GitHub", url: "https://github.com", icon: "Github" },
-      { label: "Twitter / X", url: "https://twitter.com", icon: "Twitter" },
-      { label: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
-      { label: "Discord", url: "https://discord.com", icon: "MessageSquare" }
+      { label: "GitHub", url: "https://github.com/gauravchauhanofficial58-lang", icon: "Github" },
+      { label: "Project Repo", url: "https://github.com/gauravchauhanofficial58-lang/portfolio", icon: "Github" },
+      { label: "Live Experience", url: "https://portfolio-gilt-beta-41.vercel.app", icon: "Sparkles" }
     ]
   }
 };
-

@@ -41,11 +41,11 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
       id="hero"
       className="relative min-h-[100svh] w-full flex flex-col justify-between items-center px-4 sm:px-6 md:px-12 pt-24 md:pt-28 pb-8 md:pb-12 overflow-hidden bg-[#050505] select-none"
     >
-      {/* Ambient Spotlight Glow behind the center */}
+      {/* Ambient Radial Spotlight Glow behind Center Stage */}
       <div
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] rounded-full opacity-20 blur-[130px] -z-10 transition-transform duration-700 ease-out"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] md:w-[850px] h-[550px] md:h-[850px] rounded-full opacity-25 blur-[140px] -z-10 transition-transform duration-700 ease-out"
         style={{
-          background: "radial-gradient(circle, rgba(255,135,82,0.3) 0%, rgba(5,5,5,0) 70%)",
+          background: "radial-gradient(circle, rgba(255,135,82,0.35) 0%, rgba(5,5,5,0) 70%)",
           transform: `translate(calc(-50% + ${mousePos.x * 20}px), calc(-50% + ${mousePos.y * 20}px))`,
         }}
         aria-hidden="true"
@@ -68,7 +68,7 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
           </span>
         </div>
 
-        {/* Top-right: Based in India & Portrait Switcher */}
+        {/* Top-right: Based in India & Color Mode Switcher */}
         <div
           className={`flex items-center gap-4 transition-all duration-700 delay-100 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
@@ -78,7 +78,7 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
             onClick={() =>
               setPortraitMode((prev) => (prev === "cinematic" ? "color" : "cinematic"))
             }
-            className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 hover:border-[#FF8752]/50 text-[11px] text-[#A6A19A] hover:text-[#F2EEE8] transition-all bg-[#111111]/60 backdrop-blur-sm"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 hover:border-[#FF8752]/50 text-[11px] text-[#A6A19A] hover:text-[#F2EEE8] transition-all bg-[#111111]/70 backdrop-blur-sm cursor-pointer"
             title="Toggle between Cinematic Monochrome and Original Color treatment"
             aria-label="Toggle portrait color mode"
           >
@@ -93,15 +93,15 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
         </div>
       </div>
 
-      {/* Center Cinematic Composition: Portrait & Grand Typography */}
-      <div className="relative w-full max-w-7xl flex-1 flex flex-col items-center justify-center my-2 md:my-0 min-h-[380px] sm:min-h-[460px] md:min-h-[540px]">
-        {/* Layer 1: Giant Background Name Typography ("GAURAV") */}
+      {/* Center Stage: Monumental Typography and Authentic Centered Portrait */}
+      <div className="relative w-full max-w-7xl flex-1 flex flex-col items-center justify-center my-2 md:my-0 min-h-[400px] sm:min-h-[480px] md:min-h-[560px]">
+        {/* The Singular Monumental Name Heading — NO DUPLICATES */}
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0"
           aria-hidden="true"
         >
           <h1
-            className="font-editorial-serif text-[22vw] sm:text-[18vw] md:text-[16vw] font-normal leading-none tracking-[-0.04em] text-[#F2EEE8]/12 select-none whitespace-nowrap will-change-transform transition-all duration-1000"
+            className="font-editorial-serif text-[20vw] sm:text-[18vw] md:text-[15vw] lg:text-[13.5vw] font-normal leading-none tracking-[-0.035em] text-[#F2EEE8]/30 sm:text-[#F2EEE8]/35 md:text-[#F2EEE8]/40 select-none whitespace-nowrap will-change-transform transition-all duration-1000"
             style={{
               transform: mounted
                 ? `translate3d(${mousePos.x * -12}px, ${mousePos.y * -8}px, 0)`
@@ -113,9 +113,9 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
           </h1>
         </div>
 
-        {/* Layer 2: Gaurav's Single Authentic Portrait (Precisely Centered & Proportionate) */}
+        {/* Gaurav's Single Authentic Portrait (Mathematically Centered, Natural Aspect Ratio, Zero Clipping) */}
         <div
-          className={`relative z-10 flex items-end justify-center h-[46vh] sm:h-[50vh] md:h-[56vh] lg:h-[60vh] max-h-[580px] w-auto aspect-[3/4] transition-all duration-1000 ease-out will-change-transform ${
+          className={`relative z-10 flex items-end justify-center h-[48vh] sm:h-[52vh] md:h-[58vh] lg:h-[62vh] max-h-[620px] w-auto aspect-[3/4] transition-all duration-1000 ease-out will-change-transform ${
             mounted
               ? "opacity-100 scale-100 translate-y-0"
               : "opacity-0 scale-95 translate-y-8"
@@ -126,16 +126,16 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
               : "none",
           }}
         >
-          {/* Subtle warm rim light halo behind shoulders */}
+          {/* Subtle Warm Halo Behind Shoulders */}
           <div
-            className="absolute inset-x-4 bottom-4 top-12 -z-10 rounded-full blur-[60px] opacity-20 pointer-events-none"
+            className="absolute inset-x-6 bottom-6 top-16 -z-10 rounded-full blur-[70px] opacity-25 pointer-events-none"
             style={{
               background: "radial-gradient(circle, #FF8752 0%, rgba(255,135,82,0) 70%)",
             }}
             aria-hidden="true"
           />
 
-          {/* EXACTLY ONE IMAGE COMPONENT — ZERO DUPLICATES */}
+          {/* EXACTLY ONE SINGLE IMAGE COMPONENT — PRESERVED REAL FACE & AUTHENTIC TILAK */}
           <Image
             src={
               portraitMode === "cinematic"
@@ -147,32 +147,22 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
             height={1024}
             priority
             quality={95}
-            className="w-full h-full object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)] transition-all duration-500"
+            className="w-full h-full object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)] transition-all duration-500"
           />
 
-          {/* Soft Bottom Gradient Fade into pure black floor */}
+          {/* Seamless Bottom Gradient Fade into Floor */}
           <div
-            className="absolute -bottom-1 inset-x-0 h-24 pointer-events-none z-20"
+            className="absolute -bottom-1 inset-x-0 h-28 pointer-events-none z-20"
             style={{
               background:
-                "linear-gradient(to top, #050505 20%, rgba(5,5,5,0.85) 55%, transparent 100%)",
+                "linear-gradient(to top, #050505 15%, rgba(5,5,5,0.85) 55%, transparent 100%)",
             }}
             aria-hidden="true"
           />
         </div>
-
-        {/* Layer 3: Foreground High-Contrast Elegant Name Display across lower portrait */}
-        <div
-          className="absolute inset-x-0 bottom-1 sm:bottom-3 md:bottom-6 flex items-center justify-center pointer-events-none select-none z-20"
-          aria-hidden="true"
-        >
-          <span className="font-editorial-serif text-[13vw] sm:text-[11vw] md:text-[9vw] font-normal leading-none tracking-[-0.03em] text-[#F2EEE8] text-center drop-shadow-[0_12px_24px_rgba(0,0,0,0.9)] opacity-95">
-            GAURAV
-          </span>
-        </div>
       </div>
 
-      {/* Bottom Information Row: Subtitle, CTA buttons, and Scroll Prompt */}
+      {/* Bottom Information Row: Subtitle, Action CTAs, and Scroll Indicator */}
       <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6 z-20 pt-4 border-t border-white/8">
         {/* Left: Inspiring Editorial Subtitle */}
         <div
@@ -211,7 +201,7 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
           </button>
         </div>
 
-        {/* Right: Scroll to Discover indicator */}
+        {/* Right: Scroll to Discover Indicator */}
         <div
           onClick={() => scrollTo("about")}
           className={`cursor-pointer hidden lg:flex items-center gap-3 text-xs font-editorial-mono uppercase tracking-[0.2em] text-[#A6A19A] hover:text-[#FF8752] transition-all duration-700 delay-500 ${

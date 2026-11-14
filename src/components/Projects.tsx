@@ -133,7 +133,7 @@ export default function Projects() {
                           <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
                           <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
                           <span className="ml-2 text-[10px] font-editorial-mono text-[#77736D]">
-                            {project.id}.gaurav.dev
+                            lab // {project.id}
                           </span>
                         </div>
                         <span className="text-[10px] font-editorial-mono uppercase tracking-wider text-[#FF8752]">
@@ -167,9 +167,9 @@ export default function Projects() {
 
                       {/* Bottom Info Strip */}
                       <div className="flex items-center justify-between text-[11px] font-editorial-mono text-[#77736D] pt-3 border-t border-white/8">
-                        <span>SYS: RUNNING</span>
-                        <span>LATENCY: OPTIMAL</span>
-                        <span className="text-[#FF8752]">2026 RELEASE</span>
+                        <span>ARCH: CONCEPT</span>
+                        <span>BUILD: EXPERIMENTAL</span>
+                        <span className="text-[#FF8752]">2026 HORIZON</span>
                       </div>
                     </div>
                   </div>
