@@ -11,13 +11,14 @@ interface HeroPortraitProps {
 }
 
 /**
- * HeroPortrait — Multi-layered Dark Studio Compositing
+ * HeroPortrait — Multi-layered Dark Studio Compositing with 3D Parallax Tilt
  *
  * Implements:
  * 1. Studio Backlight: Warm atmospheric halo behind shoulders
- * 2. Progressive Dual CSS Mask: Radial falloff + vertical linear attenuation
+ * 2. Progressive Dual CSS Mask: Radial vignette falloff + vertical linear attenuation
  * 3. Multi-stop Floor Melt: Seamless transition into #050505 background
- * 4. Facial Sharpness Preservation: Zero global blurs, 100% sharp eyes & tilak
+ * 4. 3D Perspective Tilt: Mouse-reactive depth without sacrificing sharpness
+ * 5. Facial Sharpness Preservation: Zero global blurs, 100% sharp eyes & tilak
  */
 export default function HeroPortrait({
   mode,
@@ -25,14 +26,19 @@ export default function HeroPortrait({
   motionEnabled,
   mounted,
 }: HeroPortraitProps) {
+  // Compute subtle 3D tilt angles
+  const tiltX = motionEnabled ? mousePos.y * -4.5 : 0;
+  const tiltY = motionEnabled ? mousePos.x * 6.0 : 0;
+
   return (
     <div
-      className={`relative z-10 flex items-end justify-center h-[44vh] sm:h-[48vh] md:h-[55vh] lg:h-[60vh] max-h-[600px] w-auto aspect-[3/4] transition-all duration-1000 ease-out will-change-transform ${
+      className={`relative z-10 flex items-end justify-center h-[46vh] sm:h-[52vh] md:h-[58vh] lg:h-[64vh] max-h-[680px] w-auto aspect-[3/4] transition-all duration-1000 ease-out will-change-transform ${
         mounted
           ? "opacity-100 scale-100 translate-y-0"
           : "opacity-0 scale-95 translate-y-6"
       }`}
       style={{
+        perspective: "1000px",
         transform: motionEnabled
           ? `translate3d(${mousePos.x * 8}px, ${mousePos.y * 6}px, 0)`
           : "none",
@@ -43,7 +49,7 @@ export default function HeroPortrait({
         className="pointer-events-none absolute inset-x-2 sm:inset-x-6 bottom-4 top-14 -z-10 rounded-full blur-[75px] opacity-25 transition-opacity duration-700"
         style={{
           background:
-            "radial-gradient(ellipse 75% 65% at 50% 50%, #FF8752 0%, rgba(255,135,82,0.15) 55%, transparent 80%)",
+            "radial-gradient(ellipse 75% 65% at 50% 50%, #FF8050 0%, rgba(255,128,80,0.15) 55%, transparent 80%)",
         }}
         aria-hidden="true"
       />
@@ -58,12 +64,14 @@ export default function HeroPortrait({
         aria-hidden="true"
       />
 
-      {/* 3. Masked Image Container with Progressive Dual CSS Masking */}
+      {/* 3. Masked Image Container with Progressive Dual CSS Masking & 3D Perspective */}
       <div
-        className="relative w-full h-full flex items-end justify-center overflow-visible"
+        className="relative w-full h-full flex items-end justify-center overflow-visible transition-transform duration-300 ease-out"
         style={{
+          transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`,
+          transformStyle: "preserve-3d",
           // Multi-directional progressive alpha mask:
-          // Radial mask feathers shoulder sides and torso edges; linear mask dissolves bottom edge
+          // Radial mask feathers shoulder sides; linear mask dissolves bottom edge
           maskImage:
             "radial-gradient(ellipse 95% 88% at 50% 36%, black 58%, rgba(0,0,0,0.85) 76%, transparent 100%), linear-gradient(to bottom, black 65%, rgba(0,0,0,0.6) 82%, transparent 98%)",
           WebkitMaskImage:
@@ -76,9 +84,9 @@ export default function HeroPortrait({
               ? "/images/portrait_cinematic.webp"
               : "/images/portrait_color.webp"
           }
-          alt="Cinematic Portrait of Gaurav"
-          width={768}
-          height={1024}
+          alt="Authentic Portrait of Gaurav"
+          width={1086}
+          height={1448}
           priority
           quality={95}
           className="w-full h-full object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.98)] transition-all duration-500 select-none pointer-events-none"

@@ -48,7 +48,7 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "GAURAV",
     fullName: "Gaurav",
-    statusBadge: "TECH ENTHUSIAST · DEVELOPER · BUILDER",
+    statusBadge: "TECHNOLOGY ENTHUSIAST · DEVELOPER · INDEPENDENT BUILDER",
     location: "BASED IN INDIA · THINKING BEYOND",
     heroHeadline: "I explore technology, build digital experiences, and imagine what's next.",
     bio: "I'm Gaurav, a technology enthusiast, aspiring AI/ML engineer, developer, and digital creator. I love exploring artificial intelligence, building innovative digital products, experimenting with emerging technologies, and turning creative ideas into reality. My vision is to build meaningful technology that shapes the future.",
@@ -256,8 +256,8 @@ export const PORTFOLIO_DATA = {
   },
 
   contact: {
-    heading: "HAVE AN INTERESTING IDEA?",
-    subheading: "Let's explore possibilities and create something meaningful.",
+    heading: "LET'S CREATE SOMETHING MEANINGFUL.",
+    subheading: "Let's explore possibilities and build purposeful technology.",
     socials: [
       { label: "GitHub", url: "https://github.com/gauravchauhanofficial58-lang", icon: "Github" },
       { label: "Project Repo", url: "https://github.com/gauravchauhanofficial58-lang/portfolio", icon: "Github" },

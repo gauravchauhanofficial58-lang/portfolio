@@ -17,9 +17,9 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      // Scroll spy logic
-      const sections = ["hero", "about", "work", "skills", "explore", "journey", "contact"];
-      const scrollPos = window.scrollY + 240;
+      // Section detection
+      const sections = ["hero", "work", "about", "skills", "journey", "contact"];
+      const scrollPos = window.scrollY + 280;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -46,24 +46,31 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
     }
   };
 
+  const navItems = [
+    { label: "WORK", id: "work" },
+    { label: "ABOUT", id: "about" },
+    { label: "SKILLS", id: "skills" },
+    { label: "JOURNEY", id: "journey" },
+  ];
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-40 flex justify-center px-4 pt-4 md:pt-6 pointer-events-none transition-all duration-300">
         <nav
           className={`pointer-events-auto flex items-center justify-between transition-all duration-300 ease-out ${
             isScrolled
-              ? "py-2.5 px-5 md:px-7 rounded-full bg-[#0E0E0E]/80 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/80 w-full max-w-4xl"
-              : "py-3.5 px-6 md:px-8 rounded-full bg-[#111111]/50 backdrop-blur-md border border-white/8 w-full max-w-5xl"
+              ? "py-2.5 px-5 md:px-7 rounded-full bg-[#0E0E0E]/85 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/80 w-full max-w-4xl"
+              : "py-3.5 px-6 md:px-8 rounded-full bg-[#111111]/60 backdrop-blur-md border border-white/8 w-full max-w-5xl"
           }`}
           aria-label="Primary navigation"
         >
           {/* Logo / Brand Name */}
           <button
             onClick={() => scrollTo("hero")}
-            className="group flex items-center gap-2 text-left focus:outline-none"
+            className="group flex items-center gap-2 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF8752] rounded-full px-1"
             aria-label="Scroll to top"
           >
-            <span className="font-editorial-serif text-lg md:text-xl font-medium tracking-[0.18em] text-[#F2EEE8] group-hover:text-[#FF8752] transition-colors">
+            <span className="font-editorial-serif text-lg md:text-xl font-medium tracking-[0.2em] text-[#F2EEE8] group-hover:text-[#FF8752] transition-colors">
               GAURAV
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF8752] group-hover:scale-125 transition-transform" />
@@ -71,20 +78,15 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-1 lg:gap-2">
-            {[
-              { label: "Work", id: "work" },
-              { label: "About", id: "about" },
-              { label: "Skills", id: "skills" },
-              { label: "Journey", id: "journey" },
-            ].map((link) => {
+            {navItems.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
-                  className={`relative px-3.5 py-1.5 rounded-full text-xs font-editorial-mono uppercase tracking-[0.15em] transition-all duration-200 ${
+                  className={`relative px-4 py-1.5 rounded-full text-xs font-editorial-mono tracking-[0.18em] transition-all duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF8752] ${
                     isActive
-                      ? "text-[#F2EEE8] bg-white/10"
+                      ? "text-[#F2EEE8] bg-white/10 font-medium"
                       : "text-[#A6A19A] hover:text-[#F2EEE8] hover:bg-white/5"
                   }`}
                 >
@@ -97,38 +99,47 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
             })}
           </div>
 
-          {/* Desktop Right Controls: CTA & Motion Toggle */}
+          {/* Desktop Right Controls: FX Toggle & LET'S TALK CTA */}
           <div className="hidden md:flex items-center gap-3">
             {onMotionToggle && (
               <button
                 onClick={onMotionToggle}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-editorial-mono tracking-wider border border-white/10 hover:border-[#FF8752]/40 text-[#77736D] hover:text-[#F2EEE8] transition-colors"
-                title={`Motion is currently ${motionEnabled ? "ON" : "OFF"}`}
-                aria-label={`Toggle motion, currently ${motionEnabled ? "ON" : "OFF"}`}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-editorial-mono tracking-wider border border-white/10 hover:border-[#FF8752]/40 text-[#A6A19A] hover:text-[#F2EEE8] transition-all bg-white/[0.03] hover:bg-white/[0.06] focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF8752]"
+                title={`Visual FX are currently ${motionEnabled ? "ENABLED" : "DISABLED"}`}
+                aria-label={`Toggle visual effects, currently ${motionEnabled ? "ON" : "OFF"}`}
               >
-                <Sparkles className={`w-3 h-3 ${motionEnabled ? "text-[#FF8752]" : "text-gray-500"}`} />
+                <span
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                    motionEnabled ? "bg-[#FF8752] shadow-[0_0_8px_#FF8752]" : "bg-gray-600"
+                  }`}
+                />
                 <span>FX {motionEnabled ? "ON" : "OFF"}</span>
               </button>
             )}
 
             <button
               onClick={() => scrollTo("contact")}
-              className="group relative inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#F2EEE8] text-[#050505] text-xs font-editorial-mono uppercase tracking-[0.14em] font-medium transition-all duration-300 hover:bg-[#FF8752] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(255,135,82,0.4)]"
+              className="group relative inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#F2EEE8] text-[#050505] text-xs font-editorial-mono uppercase tracking-[0.16em] font-medium transition-all duration-300 hover:bg-[#FF8752] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(255,135,82,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8752]"
             >
               <span>Let&apos;s Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Right Controls: FX Toggle & Menu Trigger */}
           <div className="flex md:hidden items-center gap-2">
             {onMotionToggle && (
               <button
                 onClick={onMotionToggle}
-                className="p-1.5 rounded-full text-[#A6A19A] border border-white/10"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-editorial-mono text-[#A6A19A] border border-white/10 bg-white/[0.03]"
                 aria-label="Toggle motion"
               >
-                <Sparkles className={`w-3.5 h-3.5 ${motionEnabled ? "text-[#FF8752]" : "text-gray-600"}`} />
+                <span
+                  className={`w-1.5 h-1.5 rounded-full ${
+                    motionEnabled ? "bg-[#FF8752]" : "bg-gray-600"
+                  }`}
+                />
+                <span>FX</span>
               </button>
             )}
             <button
@@ -144,19 +155,18 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-30 md:hidden bg-[#050505]/95 backdrop-blur-2xl flex flex-col justify-center px-8">
+        <div className="fixed inset-0 z-30 md:hidden bg-[#050505]/98 backdrop-blur-2xl flex flex-col justify-center px-8">
           <div className="flex flex-col gap-6 max-w-sm mx-auto w-full">
             <span className="text-[11px] font-editorial-mono uppercase tracking-[0.2em] text-[#77736D] border-b border-white/10 pb-3">
               Navigation
             </span>
             {[
               { label: "Home", id: "hero" },
-              { label: "Selected Work", id: "work" },
-              { label: "About Gaurav", id: "about" },
-              { label: "Skills & Stack", id: "skills" },
-              { label: "Areas of Exploration", id: "explore" },
-              { label: "Education & Journey", id: "journey" },
-              { label: "Let's Connect", id: "contact" },
+              { label: "Work", id: "work" },
+              { label: "About", id: "about" },
+              { label: "Skills", id: "skills" },
+              { label: "Journey", id: "journey" },
+              { label: "Let's Talk", id: "contact" },
             ].map((link, idx) => (
               <button
                 key={link.id}
@@ -182,4 +192,3 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
     </>
   );
 }
-
