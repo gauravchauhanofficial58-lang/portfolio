@@ -11,7 +11,7 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // Detect touch device
+    // Detect touch device (mobile / tablet coarse pointer)
     if (window.matchMedia("(pointer: coarse)").matches) {
       setIsTouchDevice(true);
       return;
@@ -76,33 +76,33 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
 
   return (
     <>
-      {/* Outer ring */}
+      {/* Outer Neon Trailing Ring */}
       <div
         className="pointer-events-none fixed top-0 left-0 z-50 rounded-full transition-transform duration-150 ease-out will-change-transform"
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%) scale(${
-            isClicking ? 0.75 : isHovered ? 1.7 : 1
+            isClicking ? 0.75 : isHovered ? 1.75 : 1
           })`,
           width: "36px",
           height: "36px",
           border: isHovered
-            ? "1.5px solid rgba(255, 135, 82, 0.85)"
-            : "1px solid rgba(242, 238, 232, 0.35)",
-          backgroundColor: isHovered ? "rgba(255, 135, 82, 0.08)" : "transparent",
+            ? "1.5px solid rgba(57, 255, 20, 0.85)"
+            : "1px solid rgba(57, 255, 20, 0.3)",
+          backgroundColor: isHovered ? "rgba(57, 255, 20, 0.08)" : "transparent",
+          boxShadow: isHovered ? "0 0 15px rgba(57, 255, 20, 0.35)" : "none",
         }}
       />
-      {/* Center dot */}
+      {/* Center Electric Neon Green Dot */}
       <div
-        className="pointer-events-none fixed top-0 left-0 z-50 rounded-full bg-[#FF8752] transition-transform duration-75 will-change-transform"
+        className="pointer-events-none fixed top-0 left-0 z-50 rounded-full bg-[#39FF14] transition-transform duration-75 will-change-transform shadow-[0_0_8px_#39FF14]"
         style={{
           transform: `translate3d(${target.x}px, ${target.y}px, 0) translate(-50%, -50%) scale(${
             isHovered ? 0 : 1
           })`,
-          width: "5px",
-          height: "5px",
+          width: "6px",
+          height: "6px",
         }}
       />
     </>
   );
 }
-

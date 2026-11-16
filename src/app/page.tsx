@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import PinnedStory from "@/components/PinnedStory";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Explore from "@/components/Explore";
@@ -46,14 +47,15 @@ export default function Home() {
       <ThreeBackground motionEnabled={motionEnabled} />
 
       {/* Main Experience Layout */}
-      <div className="relative min-h-screen flex flex-col selection:bg-[#FF8752] selection:text-[#050505]">
+      <div className="relative min-h-screen flex flex-col selection:bg-[#39FF14] selection:text-[#030503] overflow-x-hidden">
         {/* Floating Rounded Navigation Bar */}
         <Navbar onMotionToggle={toggleMotion} motionEnabled={motionEnabled} />
 
         {/* Main Content Sections */}
-        <main className="flex-1 w-full flex flex-col">
+        <main className="flex-1 w-full flex flex-col overflow-x-hidden">
           <Hero motionEnabled={motionEnabled} />
           <About />
+          <PinnedStory />
           <Projects />
           <Skills />
           <Explore />

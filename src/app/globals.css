@@ -3,35 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --background: #050505;
-  --foreground: #F2EEE8;
+  --background: #030503;
+  --foreground: #F1F5EF;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
+  --neon-green: #39FF14;
+  --bright-lime: #75FF36;
+  --dark-green: #07150B;
+  --deep-emerald: #092313;
 }
 
 /* Custom Editorial Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #030503;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(57, 255, 20, 0.25);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF8752;
+  background: #39FF14;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
 }
 
 /* Base Body Styles */
 body {
-  background-color: #050505;
-  color: #F2EEE8;
+  background-color: #030503;
+  color: #F1F5EF;
   font-family: var(--font-sans);
   overflow-x: hidden;
   position: relative;
@@ -46,7 +51,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.022;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -59,21 +64,25 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Glow effects */
-.glow-orange-sm {
-  box-shadow: 0 0 20px -3px rgba(255, 135, 82, 0.35);
+/* Neon Glow effects */
+.glow-neon-sm {
+  box-shadow: 0 0 15px -2px rgba(57, 255, 20, 0.45);
 }
 
-.glow-orange-lg {
-  box-shadow: 0 0 60px -10px rgba(255, 135, 82, 0.25);
+.glow-neon-lg {
+  box-shadow: 0 0 50px -6px rgba(57, 255, 20, 0.35);
+}
+
+.glow-neon-text {
+  text-shadow: 0 0 14px rgba(57, 255, 20, 0.6);
 }
 
 /* Glass panel */
 .glass-panel {
-  background: rgba(17, 17, 17, 0.65);
+  background: rgba(7, 21, 11, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(57, 255, 20, 0.15);
 }
 
 /* Accessibility reduced motion */

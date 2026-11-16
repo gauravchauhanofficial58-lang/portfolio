@@ -44,22 +44,22 @@ export default function HeroPortrait({
           : "none",
       }}
     >
-      {/* 1. Studio Backlight: Soft warm ambient glow behind subject's shoulders */}
+      {/* 1. Studio Backlight: Soft emerald & neon ambient glow behind subject's shoulders */}
       <div
-        className="pointer-events-none absolute inset-x-2 sm:inset-x-6 bottom-4 top-14 -z-10 rounded-full blur-[75px] opacity-25 transition-opacity duration-700"
+        className="pointer-events-none absolute inset-x-2 sm:inset-x-6 bottom-4 top-14 -z-10 rounded-full blur-[75px] opacity-30 transition-opacity duration-700"
         style={{
           background:
-            "radial-gradient(ellipse 75% 65% at 50% 50%, #FF8050 0%, rgba(255,128,80,0.15) 55%, transparent 80%)",
+            "radial-gradient(ellipse 75% 65% at 50% 50%, rgba(57, 255, 20, 0.22) 0%, rgba(9, 35, 19, 0.45) 55%, transparent 80%)",
         }}
         aria-hidden="true"
       />
 
       {/* 2. Atmospheric Dark Vignette Behind Subject for Studio Depth */}
       <div
-        className="pointer-events-none absolute -inset-6 -z-10 rounded-full blur-[85px] opacity-35"
+        className="pointer-events-none absolute -inset-6 -z-10 rounded-full blur-[85px] opacity-40"
         style={{
           background:
-            "radial-gradient(circle at 50% 35%, transparent 35%, rgba(5,5,5,0.85) 75%)",
+            "radial-gradient(circle at 50% 35%, transparent 35%, rgba(3, 5, 3, 0.88) 75%)",
         }}
         aria-hidden="true"
       />
@@ -98,7 +98,7 @@ export default function HeroPortrait({
         className="absolute -bottom-1 inset-x-0 h-24 sm:h-28 md:h-32 pointer-events-none z-20"
         style={{
           background:
-            "linear-gradient(to top, #050505 15%, rgba(5,5,5,0.9) 45%, rgba(5,5,5,0.45) 75%, transparent 100%)",
+            "linear-gradient(to top, #030503 15%, rgba(3, 5, 3, 0.92) 45%, rgba(3, 5, 3, 0.45) 75%, transparent 100%)",
         }}
         aria-hidden="true"
       />

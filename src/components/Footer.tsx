@@ -15,48 +15,48 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative w-full py-16 px-4 md:px-8 border-t border-white/8 bg-[#050505] overflow-hidden">
+    <footer className="relative w-full py-16 px-4 md:px-8 border-t border-[#39FF14]/15 bg-[#030503] overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Top Row: Brand & Back to Top */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <span className="font-editorial-serif text-3xl sm:text-4xl tracking-[0.14em] text-[#F2EEE8] font-medium block">
+            <span className="font-editorial-serif text-3xl sm:text-4xl tracking-[0.14em] text-[#F1F5EF] font-medium block">
               GAURAV
             </span>
-            <span className="text-xs font-editorial-mono tracking-[0.22em] text-[#FF8752] uppercase mt-1 block">
+            <span className="text-xs font-editorial-mono tracking-[0.22em] text-[#39FF14] uppercase mt-1 block">
               BUILDING. LEARNING. EXPLORING.
             </span>
           </div>
 
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 hover:bg-[#FF8752] hover:text-[#050505] border border-white/10 text-xs font-editorial-mono uppercase tracking-[0.18em] text-[#A6A19A] hover:text-[#050505] transition-all duration-300"
+            className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#07150B] hover:bg-[#39FF14] hover:text-[#030503] border border-[#39FF14]/20 text-xs font-editorial-mono uppercase tracking-[0.18em] text-[#929B91] hover:text-[#030503] transition-all duration-300 shadow-sm"
             aria-label="Back to top"
           >
             <span>Back to Top</span>
-            <div className="w-5 h-5 rounded-full bg-white/10 group-hover:bg-[#050505]/20 flex items-center justify-center transition-colors">
+            <div className="w-5 h-5 rounded-full bg-white/10 group-hover:bg-[#030503]/20 flex items-center justify-center transition-colors">
               <ArrowUp className="w-3 h-3 transition-transform group-hover:-translate-y-0.5" />
             </div>
           </button>
         </div>
 
         {/* Huge Aesthetic Editorial Watermark */}
-        <div className="w-full select-none pointer-events-none py-6 border-y border-white/6 overflow-hidden">
-          <p className="font-editorial-serif text-[12vw] sm:text-[10vw] font-normal tracking-[-0.03em] text-[#F2EEE8]/5 leading-none text-center whitespace-nowrap">
+        <div className="w-full select-none pointer-events-none py-6 border-y border-[#39FF14]/10 overflow-hidden">
+          <p className="font-editorial-serif text-[12vw] sm:text-[10vw] font-normal tracking-[-0.03em] text-[#39FF14]/5 leading-none text-center whitespace-nowrap">
             GAURAV &middot; INDIA &middot; FUTURE
           </p>
         </div>
 
         {/* Bottom Row: Dynamic Copyright, Location, System Status */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-editorial-mono text-[#77736D]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-editorial-mono text-[#5D665C]">
           <div className="flex items-center gap-2">
             <span>&copy; {currentYear} GAURAV.</span>
             <span>ALL RIGHTS RESERVED.</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-[#A6A19A]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF8752]" />
+            <span className="flex items-center gap-1.5 text-[#929B91]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#39FF14] shadow-[0_0_6px_#39FF14]" />
               LOCATION: INDIA
             </span>
             <span>&middot;</span>

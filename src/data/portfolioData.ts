@@ -88,7 +88,7 @@ export const PORTFOLIO_DATA = {
       githubUrl: "https://github.com/gauravchauhanofficial58-lang/portfolio",
       liveUrl: "https://portfolio-gilt-beta-41.vercel.app",
       highlight: "Autonomous Agent Sandbox",
-      accent: "#FF8752"
+      accent: "#39FF14"
     },
     {
       id: "spatial-3d",
@@ -102,7 +102,7 @@ export const PORTFOLIO_DATA = {
       githubUrl: "https://github.com/gauravchauhanofficial58-lang/portfolio",
       liveUrl: "https://portfolio-gilt-beta-41.vercel.app",
       highlight: "WebGL Celestial Engine",
-      accent: "#E27242"
+      accent: "#75FF36"
     },
     {
       id: "automation-engine",
@@ -116,7 +116,7 @@ export const PORTFOLIO_DATA = {
       githubUrl: "https://github.com/gauravchauhanofficial58-lang/portfolio",
       liveUrl: "https://portfolio-gilt-beta-41.vercel.app",
       highlight: "Workflow Automation Blueprint",
-      accent: "#FFA375"
+      accent: "#10B981"
     }
   ] as ProjectItem[],
 
@@ -256,12 +256,12 @@ export const PORTFOLIO_DATA = {
   },
 
   contact: {
-    heading: "LET'S CREATE SOMETHING MEANINGFUL.",
+    heading: "LET'S BUILD WHAT'S NEXT.",
     subheading: "Let's explore possibilities and build purposeful technology.",
     socials: [
       { label: "GitHub", url: "https://github.com/gauravchauhanofficial58-lang", icon: "Github" },
       { label: "Project Repo", url: "https://github.com/gauravchauhanofficial58-lang/portfolio", icon: "Github" },
-      { label: "Live Experience", url: "https://portfolio-gilt-beta-41.vercel.app", icon: "Sparkles" }
+      { label: "Live Experience", url: "https://gauravportfolioai.vercel.app", icon: "Sparkles" }
     ]
   }
 };

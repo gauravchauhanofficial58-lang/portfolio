@@ -38,26 +38,26 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative w-full py-28 md:py-36 px-4 md:px-8 border-t border-white/8 bg-[#070707]"
+      className="relative w-full py-28 md:py-36 px-4 md:px-8 border-t border-[#39FF14]/15 bg-[#050805]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-3 text-xs font-editorial-mono uppercase tracking-[0.22em] text-[#FF8752] mb-4">
-              <span className="w-6 h-[1px] bg-[#FF8752]" />
+            <div className="flex items-center gap-3 text-xs font-editorial-mono uppercase tracking-[0.22em] text-[#39FF14] mb-4">
+              <span className="w-6 h-[1px] bg-[#39FF14]" />
               <span>03 / CAPABILITIES</span>
             </div>
-            <h2 className="font-editorial-serif text-4xl sm:text-5xl md:text-6xl text-[#F2EEE8] font-normal tracking-[-0.02em]">
+            <h2 className="font-editorial-serif text-4xl sm:text-5xl md:text-6xl text-[#F1F5EF] font-normal tracking-[-0.02em]">
               Skills &amp; Technology Stack.
             </h2>
           </div>
-          <p className="max-w-md text-sm font-editorial-mono text-[#A6A19A] leading-relaxed">
+          <p className="max-w-md text-sm font-editorial-mono text-[#929B91] leading-relaxed">
             Technologies and concepts actively explored, practiced, and integrated into practical projects and prototypes.
           </p>
         </div>
 
-        {/* Filter Pills */}
+        {/* Filter Pills with Electric Neon Glow */}
         <div className="flex flex-wrap items-center gap-2 mb-12">
           {filterOptions.map((filter) => (
             <button
@@ -65,8 +65,8 @@ export default function Skills() {
               onClick={() => setSelectedFilter(filter.id)}
               className={`px-4 py-2 rounded-full text-xs font-editorial-mono uppercase tracking-wider transition-all duration-300 ${
                 selectedFilter === filter.id
-                  ? "bg-[#FF8752] text-[#050505] font-semibold shadow-[0_0_20px_rgba(255,135,82,0.35)]"
-                  : "bg-white/5 text-[#A6A19A] hover:text-[#F2EEE8] hover:bg-white/10 border border-white/8"
+                  ? "bg-[#39FF14] text-[#030503] font-semibold shadow-[0_0_20px_rgba(57,255,20,0.45)]"
+                  : "bg-[#07150B] text-[#929B91] hover:text-[#F1F5EF] hover:bg-[#0C2314] border border-[#39FF14]/20"
               }`}
             >
               {filter.label}
@@ -78,11 +78,11 @@ export default function Skills() {
         <div className="space-y-12">
           {getFilteredCategories().map((cat) => (
             <div key={cat.category} className="space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/8 pb-3">
-                <h3 className="font-editorial-serif text-2xl sm:text-3xl text-[#F2EEE8] font-light">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-[#39FF14]/15 pb-3">
+                <h3 className="font-editorial-serif text-2xl sm:text-3xl text-[#F1F5EF] font-light">
                   {cat.category}
                 </h3>
-                <span className="text-xs font-editorial-mono text-[#77736D]">
+                <span className="text-xs font-editorial-mono text-[#5D665C]">
                   {cat.description}
                 </span>
               </div>
@@ -95,28 +95,28 @@ export default function Skills() {
                   return (
                     <div
                       key={skill.name}
-                      className="group relative p-6 rounded-2xl bg-[#0F0F0F] border border-white/8 hover:border-[#FF8752]/40 hover:bg-[#141414] transition-all duration-300 flex flex-col justify-between min-h-[140px]"
+                      className="group relative p-6 rounded-2xl bg-[#07150B] border border-[#39FF14]/15 hover:border-[#39FF14]/50 hover:bg-[#0C2314] transition-all duration-300 flex flex-col justify-between min-h-[140px] shadow-lg"
                     >
                       <div className="flex items-start justify-between gap-4 mb-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-xl bg-white/5 group-hover:bg-[#FF8752]/10 flex items-center justify-center text-[#FF8752] transition-colors">
+                          <div className="w-9 h-9 rounded-xl bg-white/5 group-hover:bg-[#39FF14]/15 flex items-center justify-center text-[#39FF14] transition-colors border border-white/5 group-hover:border-[#39FF14]/30">
                             <Icon className="w-4 h-4" />
                           </div>
                           <div>
-                            <h4 className="font-editorial-serif text-lg text-[#F2EEE8] font-medium leading-tight">
+                            <h4 className="font-editorial-serif text-lg text-[#F1F5EF] font-medium leading-tight">
                               {skill.name}
                             </h4>
-                            <span className="text-[11px] font-editorial-mono text-[#77736D] uppercase tracking-wider">
+                            <span className="text-[11px] font-editorial-mono text-[#5D665C] uppercase tracking-wider">
                               {skill.level}
                             </span>
                           </div>
                         </div>
                         {skill.highlight && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8752] group-hover:scale-150 transition-transform" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#39FF14] shadow-[0_0_6px_#39FF14] group-hover:scale-150 transition-transform" />
                         )}
                       </div>
 
-                      <p className="text-xs text-[#A6A19A] font-sans leading-relaxed border-t border-white/6 pt-3 mt-auto">
+                      <p className="text-xs text-[#929B91] font-sans leading-relaxed border-t border-[#39FF14]/10 pt-3 mt-auto">
                         {skill.context}
                       </p>
                     </div>
@@ -130,4 +130,3 @@ export default function Skills() {
     </section>
   );
 }
-
