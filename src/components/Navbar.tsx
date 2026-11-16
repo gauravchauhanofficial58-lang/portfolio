@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useSmoothScroll } from "./SmoothScroll";
 
 interface NavbarProps {
   onMotionToggle?: () => void;
@@ -34,16 +35,11 @@ export default function Navbar({ onMotionToggle, motionEnabled = true }: NavbarP
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const { scrollTo: smoothScrollTo } = useSmoothScroll();
+
   const scrollTo = (id: string) => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      const topOffset = element.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({
-        top: topOffset,
-        behavior: "smooth",
-      });
-    }
+    smoothScrollTo(`#${id}`);
   };
 
   const navItems = [

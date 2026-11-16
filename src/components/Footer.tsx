@@ -2,16 +2,18 @@
 
 import React from "react";
 import { ArrowUp } from "lucide-react";
+import { useSmoothScroll } from "./SmoothScroll";
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = React.useState(2026);
+  const { scrollTo: smoothScrollTo } = useSmoothScroll();
 
   React.useEffect(() => {
     setCurrentYear(new Date().getFullYear());
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    smoothScrollTo(0);
   };
 
   return (

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowDown, ArrowUpRight, Palette } from "lucide-react";
 import HeroPortrait from "@/components/HeroPortrait";
+import { useSmoothScroll } from "./SmoothScroll";
 
 interface HeroProps {
   motionEnabled?: boolean;
@@ -28,12 +29,10 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [motionEnabled]);
 
+  const { scrollTo: smoothScrollTo } = useSmoothScroll();
+
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const topOffset = el.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }
+    smoothScrollTo(`#${id}`);
   };
 
   const nameLetters = ["G", "A", "U", "R", "A", "V"];
@@ -133,6 +132,52 @@ export default function Hero({ motionEnabled = true }: HeroProps) {
           motionEnabled={motionEnabled}
           mounted={mounted}
         />
+
+        {/* Floating 3D Holographic Reticle / Vision Emblem (matching frame 02s of reference) */}
+        <div
+          className="absolute right-4 lg:right-16 top-1/4 pointer-events-none select-none hidden md:flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity"
+          style={{
+            transform: `translate3d(${mousePos.x * 12}px, ${mousePos.y * 10}px, 0)`,
+          }}
+          aria-hidden="true"
+        >
+          <div className="relative w-16 h-16 rounded-full border border-[#39FF14]/30 flex items-center justify-center animate-[spin_20s_linear_infinite]">
+            <div className="w-10 h-10 rounded-full border border-[#75FF36]/40 border-dashed" />
+            <div className="w-4 h-4 rounded-full bg-[#39FF14]/20 border border-[#39FF14] flex items-center justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#39FF14] shadow-[0_0_8px_#39FF14]" />
+            </div>
+            {/* Crosshairs */}
+            <div className="absolute inset-x-0 h-[1px] bg-[#39FF14]/20" />
+            <div className="absolute inset-y-0 w-[1px] bg-[#39FF14]/20" />
+          </div>
+          <span className="text-[9px] font-editorial-mono text-[#39FF14] tracking-widest uppercase">
+            SYS.VISION
+          </span>
+        </div>
+      </div>
+
+      {/* 3.5 Reference-style Micro-Telemetry Chips (matching 02s of reference video) */}
+      <div
+        className={`w-full max-w-7xl flex items-center justify-center gap-2 sm:gap-3 flex-wrap z-20 my-2 transition-all duration-700 delay-250 ${
+          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+        }`}
+      >
+        <div className="px-3 py-1 rounded-full bg-[#07150B]/90 border border-[#39FF14]/20 text-[10px] font-editorial-mono flex items-center gap-1.5 shadow-sm">
+          <span className="text-[#929B91]">STATUS</span>
+          <span className="text-[#39FF14] font-semibold">Building & Learning</span>
+        </div>
+        <div className="px-3 py-1 rounded-full bg-[#07150B]/90 border border-[#39FF14]/20 text-[10px] font-editorial-mono flex items-center gap-1.5 shadow-sm">
+          <span className="text-[#929B91]">STAGE</span>
+          <span className="text-[#75FF36] font-semibold">Class 8 · CBSE</span>
+        </div>
+        <div className="px-3 py-1 rounded-full bg-[#07150B]/90 border border-[#39FF14]/20 text-[10px] font-editorial-mono flex items-center gap-1.5 shadow-sm">
+          <span className="text-[#929B91]">TARGET</span>
+          <span className="text-[#39FF14] font-semibold">IIT Bombay CSE & AI</span>
+        </div>
+        <div className="px-3 py-1 rounded-full bg-[#07150B]/90 border border-[#39FF14]/20 text-[10px] font-editorial-mono flex items-center gap-1.5 shadow-sm">
+          <span className="text-[#929B91]">STACK</span>
+          <span className="text-[#F1F5EF] font-semibold">Python · PyTorch · Next.js</span>
+        </div>
       </div>
 
       {/* 4. Bottom Information Row: Subtitle, CTAs, and Scroll Prompt */}
